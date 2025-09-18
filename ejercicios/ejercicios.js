@@ -17,7 +17,7 @@
 // let nombreUsuario = prompt("Introduce tu nombre de usuario: ");
 // setTimeout(() => {alert(nombreUsuario);}, 3000);
 
+// Le pides al usuario una cadena
 let cadena = prompt("Introduce una cadena de texto: ");
-console.log(`La cadena tiene ${cadena.length} caracteres`);
-console.log(`La cadena tiene ${cadena.match(/[AEIOUaeiou]/g).length} vocale/s`);
-console.log(`¿La cadena empieza o no por "A"? ${cadena.startsWith("A")}`);
+// Cuenta el número de caracteres
+alert(`La cadena tiene ${cadena.length} caracteres \n La cadena tiene ${cadena.match(/[AEIOUaeiou]/g).length} vocale/s  \n ¿La cadena empieza o no por "A"? ${cadena.startsWith("A")}`);
