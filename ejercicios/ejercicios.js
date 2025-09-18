@@ -20,4 +20,6 @@
 // Le pides al usuario una cadena
 let cadena = prompt("Introduce una cadena de texto: ");
 // Cuenta el número de caracteres
-alert(`La cadena tiene ${cadena.length} caracteres \n La cadena tiene ${cadena.match(/[AEIOUaeiou]/g).length} vocale/s  \n ¿La cadena empieza o no por "A"? ${cadena.startsWith("A")}`);
+alert(`La cadena tiene ${cadena.length} caracteres \n
+    La cadena tiene ${cadena.match(/[AEIOUaeiou]/g).length} vocale/s \n
+    ¿La cadena empieza o no por "A"? ${cadena.startsWith("A")}`);
