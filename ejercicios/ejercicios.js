@@ -10,10 +10,10 @@
 //     alert("La suma de los números introduccidos no es 100");
 // }
 
-// Función setTimeout que pase 3 milisegundos y después muestre un alert de "Hola"
+// // Función setTimeout que pase 3 milisegundos y después muestre un alert de "Hola"
 // setTimeout(() => {alert("Hola");}, 3000);
 
-// Función setTimeout que le pida al usuario su nombre y después de 3 segundos muestre un alert con su nombre
+// // Función setTimeout que le pida al usuario su nombre y después de 3 segundos muestre un alert con su nombre
 // let nombreUsuario = prompt("Introduce tu nombre de usuario: ");
 // setTimeout(() => {alert(nombreUsuario);}, 3000);
 
