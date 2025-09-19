@@ -1,18 +1,21 @@
-let arrayValores = [90, 4, 89, "asd", true, "hola"]
+let arrayValores = [90, 4, 89, 100,23]
 function funcionConRest(arg1, arg2, ...restoArg) {
     console.log("El primer argumento es " + arg1);
     console.log("El segundo argumento es " + arg2);
     console.log("El resto de arumento es un array " + restoArg);
+
 }
 
-function funcionConSpread(...arrayValores) {
-    // if (arrayValores.includes([0 - 100])) {
-    //     console.log("El número mayor es " + arrayValores.reduce((max, min) => num > max ? num : max, arrayValores[0]));
-    // }
-    console.log(arrayValores)
-    console.log(arrayValores.includes([0-100]) && arrayValores.reduce((max, min) => num > max ? num : max, arrayValores[0]));
+function devolverMayor(...valor) {
+    valor.some(num => isNaN(num)) ?
+        // caso true
+        undefined :
+        // caso false
+        valor.reduce((max, num) => num > max ? num : max, valor[0]);
 }
 
 funcionConRest(...arrayValores);
 console.log("------- ")
-funcionConSpread(...arrayValores);
+console.log(
+    devolverMayor(...arrayValores)
+);
