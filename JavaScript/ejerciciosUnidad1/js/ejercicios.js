@@ -1,46 +1,46 @@
 // // Ejercicio 1
-// console.log("Ejercicio 1: función que reciba dos cadenas y mostrar cuál es la más corta.");
-// function cadenaMasCorta(cadena1, cadena2) {
-// // Comprobar si la cadena1 y 2 son de tipo String
-// if (typeof cadena1 != "string" || typeof cadena2 != "string") {
-//     console.log("La cadena que has introducido no es un String");
+// console.log("Ejercicio 1: función que reciba dos productos y mostrar cuál es la más corta.");
+// function productoMasCorta(producto1, producto2) {
+// // Comprobar si la producto1 y 2 son de tipo String
+// if (typeof producto1 != "string" || typeof producto2 != "string") {
+//     console.log("La producto que has introducido no es un String");
 // } else {
-//         // Si la cadena1 es menor que 2 pinta que la 1 es la más corta
-//         if (cadena1.length < cadena2.length) {
-//             console.log(`La cadena ${cadena1} es la más corta.`)
-//         } else if(cadena1.length > cadena2.length){ // En caso contrario sería la 2
-//             console.log(`La cadena ${cadena2} es la más corta.`)
+//         // Si la producto1 es menor que 2 pinta que la 1 es la más corta
+//         if (producto1.length < producto2.length) {
+//             console.log(`La producto ${producto1} es la más corta.`)
+//         } else if(producto1.length > producto2.length){ // En caso contrario sería la 2
+//             console.log(`La producto ${producto2} es la más corta.`)
 //         } else {
-//             console.log("Ambas cadenas tiene la mima longitud.")
+//             console.log("Ambas productos tiene la mima longitud.")
 //         }
 //     }
 // }
 
-// cadenaMasCorta("Hola","Mundo");
-// cadenaMasCorta("Javier","Brayan");
-// cadenaMasCorta(15,"palabra");
+// productoMasCorta("Hola","Mundo");
+// productoMasCorta("Javier","Brayan");
+// productoMasCorta(15,"palabra");
 
 
 // ----------------------------------------------------------------------------
 
 
 // // Ejercicio 2
-// console.log("Ejercicio 2: función que reciba dos cadenas y comprobar si la cadena es igual a la otra del revés.");
-// function cadenaInversa(cadena1, cadena2) {
-//     if (typeof cadena1 != "string" || typeof cadena2 != "string") {
-//         console.log("La cadena que has introducido no es un String");
+// console.log("Ejercicio 2: función que reciba dos productos y comprobar si la producto es igual a la otra del revés.");
+// function productoInversa(producto1, producto2) {
+//     if (typeof producto1 != "string" || typeof producto2 != "string") {
+//         console.log("La producto que has introducido no es un String");
 //     } else {
-//         // Creo una variable en la que utilizo split para separar la cadena
-//         let cadenaInversa = cadena2.split('').reverse().join('');
-//         if(cadena1 == cadenaInversa){
-//             console.log(`La cadena ${cadena1} es igual que la cadena ${cadena2}`);
+//         // Creo una variable en la que utilizo split para separar la producto
+//         let productoInversa = producto2.split('').reverse().join('');
+//         if(producto1 == productoInversa){
+//             console.log(`La producto ${producto1} es igual que la producto ${producto2}`);
 //         } else {
-//             console.log(`La cadena ${cadena1} NO es igual que la cadena ${cadena2}`)
+//             console.log(`La producto ${producto1} NO es igual que la producto ${producto2}`)
 //         }
 //     }
 // }
-// cadenaInversa("amor","roma");
-// cadenaInversa("sol","luna");
+// productoInversa("amor","roma");
+// productoInversa("sol","luna");
 
 
 // ----------------------------------------------------------------------------
@@ -49,7 +49,7 @@
 // // Ejercicio 3
 // console.log("Ejercicio 3: Función en la que pase un array y que devuelva:");
 // console.log("Elementos de tipo number.");
-// console.log("Elementos de tipo cadena.");
+// console.log("Elementos de tipo producto.");
 // console.log("Elementos de otro tipo");
 
 // function arrayTipos(array) {
@@ -88,8 +88,14 @@
 
 
 // Ejercicio 4
-console.log("Ejercicio 4: función que reciba 3 parámetros");
+console.log("Ejercicio 4: función que reciba 3 parámetros con valores por defecto.");
+console.log("La función convierte las entradas a cadea, entero y entero");
 
-function funcionConversiones(string,bool, number){
+function funcionConversiones(producto = "Producto genérico", precio = 100, impuesto = 21) {
+    if(NaN(precio))
 
+    console.log(`El producto es ${producto} el precio es ${precio} y su impuesto es ${impuesto}`);
 }
+funcionConversiones();
+funcionConversiones("asd",150,23);
+funcionConversiones();
