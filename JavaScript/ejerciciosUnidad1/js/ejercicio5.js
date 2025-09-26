@@ -12,4 +12,7 @@ function ordenarArray(arr) {
     }
     return arr;
 }
-console.log(ordenarArray([1, 67, 23, 98, 43, 65, 32, 87]));
+let arrayNumerosOrdenar = [55,67,23,87,100,34,45,76];
+console.log(`Array original [${arrayNumerosOrdenar}]`);
+console.log(`Array ordenado [${ordenarArray(arrayNumerosOrdenar)}]`);
+console.log("");

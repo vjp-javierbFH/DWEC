@@ -19,3 +19,4 @@ if (typeof producto1 != "string" || typeof producto2 != "string") {
 productoMasCorta("Hola","Mundo");
 productoMasCorta("Javier","Brayan");
 productoMasCorta(15,"palabra");
+console.log("");

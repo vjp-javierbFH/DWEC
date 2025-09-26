@@ -15,3 +15,4 @@ function productoInversa(producto1, producto2) {
 }
 productoInversa("amor","roma");
 productoInversa("sol","luna");
+console.log("");

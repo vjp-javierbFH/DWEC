@@ -8,6 +8,36 @@
 <body>
     <h1>Conceptos básicos de JavaScript: variables, arrays y funciones</h1>
 
-    <a href="#" onclick="">Ejercicio 1</a>
+    <ul>
+        <li><a href="#" onclick="cargarScript('js/ejercicio1.js')">Ejercicio 1</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio2.js')">Ejercicio 2</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio3.js')">Ejercicio 3</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio4.js')">Ejercicio 4</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio5.js')">Ejercicio 5</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio6.js')">Ejercicio 6</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio7.js')">Ejercicio 7</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio8.js')">Ejercicio 8</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio9.js')">Ejercicio 9</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio10.js')">Ejercicio 10</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio11.js')">Ejercicio 11</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio12.js')">Ejercicio 12</a></li>
+        <li><a href="#" onclick="cargarScript('js/ejercicio13.js')">Ejercicio 13</a></li>
+    </ul>
+
+    <script>
+    function cargarScript(nombreArchivo) {
+      // Eliminar script anterior si existe
+      const existente = document.getElementById("script-dinamico");
+      if (existente) {
+        existente.remove();
+      }
+
+      // Crear y cargar nuevo script
+      const script = document.createElement("script");
+      script.src = nombreArchivo;
+      script.id = "script-dinamico";
+      document.body.appendChild(script);
+    }
+    </script>
 </body>
 </html>

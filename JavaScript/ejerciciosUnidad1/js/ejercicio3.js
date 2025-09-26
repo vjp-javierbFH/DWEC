@@ -33,3 +33,4 @@ function arrayTipos(array) {
     console.log(`Elementos de otros tipo: ${otroTipo} (${contarOtroTipo})`);
 }
 arrayTipos(["Es un array", 1, null, true, "Cien", 100, false, "Ya no se que escribir"]);
+console.log("");
