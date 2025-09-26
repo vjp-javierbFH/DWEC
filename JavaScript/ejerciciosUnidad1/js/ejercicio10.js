@@ -104,19 +104,41 @@
 // ----------------------------------------------------------------------------
 
 
-// Ejercicio 5
+// // Ejercicio 5
+// console.log("Ejercicio5: ordenar un array sin utilizar el método sort.");
+// function ordenarArray(arr) {
+//     for (let $i = 0; $i < arr.length - 1; $i++) {
+//         for (let $j = 0; $j < arr.length; $j++) {
+//             if (arr[$j] > arr[$i + 1]) {
+//                 let valorMayor = arr[$j];
+//                 arr[$j] = arr[$i + 1];
+//                 arr[$i + 1] = valorMayor;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+// console.log(ordenarArray([1, 67, 23, 98, 43, 65, 32, 87]));
 
 
 // ----------------------------------------------------------------------------
 
 
 // Ejercicio 6
+console.log("Ejercicio 6: ")
 
 
 // ----------------------------------------------------------------------------
 
 
-// Ejercicio 7
+// // Ejercicio 7
+// console.log("Ejercicio 7: utilizar función every para comprobar si todos los números de un array son pares.");
+// let arrayNumeros = [1, 8, 45, 87, 23, 101, 34];
+// console.log(`¿El array [${arrayNumeros}] tiene todos los números pares?: `);
+// console.log(arrayNumeros.every(num => num % 2 == 0));
+// let arrayNumeros2 = [2,46,88,4,100,20,90];
+// console.log(`¿El array [${arrayNumeros2}] tiene todos los números pares?: `);
+// console.log(arrayNumeros2.every(num => num % 2 == 0));
 
 
 // ----------------------------------------------------------------------------
