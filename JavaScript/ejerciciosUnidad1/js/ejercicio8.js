@@ -8,7 +8,7 @@ function preocesarArray(array) {
         // console.log(`Array con los valores duplicados [${array.every(element => element * 2)}]`)
     } else {
 
-        alert("Error en el array");
+        alert("Error en el array al no tener todos los elementos de tipo número");
     }
 }
 let arrayEjercicio8 = [3, 7, 10, 14, 21];
