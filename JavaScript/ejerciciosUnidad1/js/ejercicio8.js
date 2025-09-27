@@ -4,11 +4,14 @@ console.log("1) Comprobar si los elementos son de tipo número.");
 console.log("2) En caso afirmativo modificar el valor del array duplicando.");
 console.log("3) Comprobar que todos los elementos son pares.");
 function preocesarArray(array) {
-    if (array.every(element => typeof element === 'number')) {
-        // console.log(`Array con los valores duplicados [${array.every(element => element * 2)}]`)
+    let allNumbers = array.every(item => typeof item === 'number');
+    if (allNumbers) {
+        let doubledArray = array.map(item => item * 2);
+        console.log("Array con valores duplicados: " + doubledArray);
+        let allEven = doubledArray.every(item => item % 2 === 0);
+        console.log("¿Todos los elementos son pares? " + allEven);
     } else {
-
-        alert("Error en el array al no tener todos los elementos de tipo número");
+        console.log("El array contiene elementos que no son números.");
     }
 }
 let arrayEjercicio8 = [3, 7, 10, 14, 21];
