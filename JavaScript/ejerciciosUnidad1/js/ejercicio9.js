@@ -24,3 +24,4 @@ mapaPlatos.forEach((ingredientes, plato) => {
     console.log(plato.toString());
     console.log("Ingredientes: " + ingredientes.join(", "));
 });
+console.log("");
