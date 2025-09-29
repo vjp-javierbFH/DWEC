@@ -27,6 +27,7 @@ function eliminarRepetidos(array) {
 }
 
 // Ejemplo de uso
-const arrayEjemplo = [1, 2, 3, 4, 2, 5, 3, 6, 1];
+const arrayEjemplo = [1,10,23,10,34,20,20];
+console.log("Array original:", arrayEjemplo);
 eliminarRepetidos(arrayEjemplo);
 console.log("");
