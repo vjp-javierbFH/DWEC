@@ -29,3 +29,4 @@ function eliminarRepetidos(array) {
 // Ejemplo de uso
 const arrayEjemplo = [1, 2, 3, 4, 2, 5, 3, 6, 1];
 eliminarRepetidos(arrayEjemplo);
+console.log("");
