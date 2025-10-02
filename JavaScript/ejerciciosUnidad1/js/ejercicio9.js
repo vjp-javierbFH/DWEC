@@ -1,5 +1,5 @@
 // Ejercicio 9
-console.log("Ejerciico 9: crear un programa que existan 3 objetos de tipo paltoCocina [Atributos: nombrePlato, duracionMinutos y dificultad]");
+console.log("Ejercico 9: crear un programa que existan 3 objetos de tipo paltoCocina [Atributos: nombrePlato, duracionMinutos y dificultad]");
 
 // Definición de la clase platoCocina
 class platoCocina {

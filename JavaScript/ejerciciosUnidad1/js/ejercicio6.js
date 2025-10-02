@@ -20,3 +20,4 @@ console.log("Después de eliminar las posiciones 3,4 y 5: " + array);
 // 4) Insertar 2 elementos antes del último elemento.
 array.splice(array.length - 1, 0, 75, 90);
 console.log("Después de insertar 2 elementos antes del último elemento: " + array);
+console.log("");
