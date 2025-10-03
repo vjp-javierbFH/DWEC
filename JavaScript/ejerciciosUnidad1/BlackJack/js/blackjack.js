@@ -1,11 +1,30 @@
 console.log("Black Jack");
-// Crear un array
-let cartasBlackJack = ["Corazones", "Picas", "Tréboles"][1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jota", "Reina", "Rey"];
 
+// Función que le pide al usuario si quiere jugar al blackjack
 function empezarJuego() {
     while (prompt("Quieres jugar al BlackJack? (S/N)") === "S") {
         blackJack();
     }
+}
+
+function construirMazo() {
+    // Crear un array
+    let cartasPalos = ["Corazones", "Picas", "Tréboles"];
+    let cartasValor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jota", "Reina", "Rey"];
+    let mazo = [];
+    // Recorre cada palo del array cartasPalo
+    for (let palo of cartasPalos) {
+        // Cada valor del array cartasValor
+        for (let valor of cartasValor) {
+            mazo.push([palo, valor]);
+        }
+    }
+    // Devuelve un array de arrays
+    return mazo;
+}
+
+function calcularValorMano(cartasBlackJack) {
+
 }
 
 // DçFunción para lanzar un juego de blackjack
@@ -26,13 +45,16 @@ function blackJack() {
 
 // Función que pide al usuario 
 function turnoJugador(mazo) {
+    let cartas = [];
     do {
+        let cartasBlackJack = mazo
     } while (prompt("¿Desea pedir otra carta? (S/N)") === "S");
+    return cartas;
 }
 
-function mostrarMenu() {
+function turnoMaquina(mazo, valorJugador){
+    let cartasMaquina = [];
 
-}
+    let carta
 
-function pedirCarta() {
 }
