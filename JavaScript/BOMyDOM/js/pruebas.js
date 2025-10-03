@@ -35,7 +35,5 @@ for (let item of elementoP) {
     console.log(item.id);
 }
 
-document.getElementsByClassName("parrafos").item(0).remove();
 for(let item of elementoP){
-    console.log(item.id);
 }
