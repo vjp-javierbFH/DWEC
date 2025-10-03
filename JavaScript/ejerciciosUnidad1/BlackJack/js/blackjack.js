@@ -27,23 +27,6 @@ function calcularValorMano(cartas) {
 
 }
 
-
-// Función que pide al usuario 
-function turnoJugador(mazo) {
-    let cartas = [];
-    do {
-        // let carta = 
-    } while (prompt("¿Desea pedir otra carta? (S/N)") === "S");
-    return cartas;
-}
-
-function turnoMaquina(mazo, valorJugador) {
-    let cartasMaquina = [];
-
-    let carta
-
-}
-
 // DçFunción para lanzar un juego de blackjack
 function blackJack() {
     console.log("Creando mazo...");
@@ -58,4 +41,21 @@ function blackJack() {
         let cartasMaquina = turnoMaquina(mazo, valorJugador);
         pintarInfoFinalJuego(cartasJugador, cartasMaquina);
     }
+}
+
+
+// Función que pide al usuario 
+function turnoJugador(mazo) {
+    let cartas = [];
+    do {
+        let carta = mazo
+    } while (prompt("¿Desea pedir otra carta? (S/N)") === "S");
+    return cartas;
+}
+
+function turnoMaquina(mazo, valorJugador) {
+    let cartasMaquina = [];
+
+    let carta
+
 }
