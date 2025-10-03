@@ -7,8 +7,9 @@ function empezarJuego() {
     }
 }
 
+// Función 
 function construirMazo() {
-    // Crear un array
+    // Crear dos arrays: palo y valor
     let cartasPalos = ["Corazones", "Picas", "Tréboles"];
     let cartasValor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jota", "Reina", "Rey"];
     let mazo = [];
