@@ -21,10 +21,21 @@
 // console.log(body.nextElementSibling);
 // console.log(body.previousElementSibling);
 
-let miElemento = document.createElement("p");
-let miTexto = document.createTextNode("texto de prueba")
-// miElemento.innerText = "probando";
+// let miElemento = document.createElement("p");
+// let miTexto = document.createTextNode("texto de prueba")
+// // miElemento.innerText = "probando";
 
-miElemento.appendChild(miTexto);
+// miElemento.appendChild(miTexto);
 
-document.body.appendChild(miElemento);
+// document.body.appendChild(miElemento);
+
+// Prueba 7
+let elementoP = document.getElementsByTagName("p");
+for (let item of elementoP) {
+    console.log(item.id);
+}
+
+document.getElementsByClassName("parrafos").item(0).remove();
+for(let item of elementoP){
+    console.log(item.id);
+}
