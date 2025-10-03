@@ -9,6 +9,7 @@ function funcionConversiones(producto = "Producto genérico", precio = 100, impu
     impuesto = parseInt(impuesto);
 
     // Validar los valores convertidos
+    // Si el elemento no es número
     if (isNaN(precio)) precio = 100;
     if (isNaN(impuesto)) impuesto = 21;
 

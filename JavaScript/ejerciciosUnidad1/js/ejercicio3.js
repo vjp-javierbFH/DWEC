@@ -14,7 +14,7 @@ function arrayTipos(array) {
     let contarOtroTipo = 0;
 
 
-    // Bucle
+    // Bucle para identificar cada elemento
     for (let item of array) {
         if (typeof item == "string") {
             tipoString.push(item);

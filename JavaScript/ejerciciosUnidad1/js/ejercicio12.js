@@ -13,3 +13,41 @@ let estudiantes = new Map(
 );
 
 // Función que calcule la media
+function mediaAritmetica(...numeros) {
+    let suma = 0;
+
+    for (let n of numeros) {
+        suma += n;
+    }
+
+    return suma / numeros.length;
+}
+// Función que muestre el nombre de los alumnos y su media
+function mostrarNombreYMedia(estudiantes) {
+    // Recorrer cada alumno
+    estudiantes.forEach((notas, nombre) => {
+        let media = mediaAritmetica(...notas);
+        console.log(`${nombre}, media: ${media}`)
+    });
+}
+
+// Mostrar estudiante con mejor media
+// function alumnoMejorMedia(estudiantes){
+//     mejorMedia = 
+// }
+
+// Mostrar nombre de alumnos ordenados por media
+function ordenarAlumnoPorMedia(estudiantes) {
+    let ordenar = [];
+
+    estudiantes.forEach((notas, nombre) => {
+        // Guarda nombre y nota media(utilizando la función mediaAritmetica)
+        ordenar.push({ nombre, media: mediaAritmetica(...notas) });
+    });
+
+    // La función sort para ordenar las medias de mayor a menor
+    ordenar.sort((a, b) => b.media - a.media);
+
+    console.log("\nEstudiantes ordenados por media:");
+    ordenar.forEach(e => console.log(`${e.nombre} → ${e.media}`));
+}
