@@ -12,13 +12,13 @@
 // document.getElementsByTagName("https://www.google.com");
 
 // Prueba 6.1
-// let body = document.body;
+let body = document.body;
 // console.log(body.childNodes);
 // console.log(body.children);
 // console.log(body.parentNode);
 // console.log(body.nextSibling);
 // console.log(body.previousSibling);
-// console.log(body.nextElementSibling);
+console.log(body.nextElementSibling);
 // console.log(body.previousElementSibling);
 
 // let miElemento = document.createElement("p");
@@ -30,10 +30,11 @@
 // document.body.appendChild(miElemento);
 
 // Prueba 7
-let elementoP = document.getElementsByTagName("p");
-for (let item of elementoP) {
-    console.log(item.id);
-}
+// let elementoP = document.getElementsByTagName("p");
+// for (let item of elementoP) {
+//     console.log(item.id);
+// }
 
-for(let item of elementoP){
-}
+// for(let item of elementoP){
+//     item.remove();
+// }
