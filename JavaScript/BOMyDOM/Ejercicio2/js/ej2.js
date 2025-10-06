@@ -6,3 +6,10 @@ alert(`Enlace (a) que sea hijo directo de div: ${enlaceHijo ? enlaceHijo.textCon
 
 let enlace = document.querySelector("#div1 > p > a");
 alert(`Enlace (a) hijo de p, también hijo de #div1: ${enlace ? enlace.textContent : "Hijo no encontrado"}`);
+
+let segundoLink = document.querySelector(".linkNormal ~ a");
+console.log(`Mostrar por consola el enlace del segundo linkNormal: ${segundoLink.getAttribute("href")}`);
+
+let enlaceLinkNormal = document.querySelector(".linkNormla[title^=Spider]");
+let cuerpo = document.body;
+cu.innerHTML += "Mostrar contenido con innerHTML: " + enlaceLinkNormal;
