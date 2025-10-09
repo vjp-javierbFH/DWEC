@@ -12,4 +12,16 @@ console.log(`Mostrar por consola el enlace del segundo linkNormal: ${segundoLink
 
 let enlaceLinkNormal = document.querySelector(".linkNormla[title^=Spider]");
 let cuerpo = document.body;
-cu.innerHTML += "Mostrar contenido con innerHTML: " + enlaceLinkNormal;
+cuerpo.innerHTML += "Mostrar contenido con innerHTML: " + enlaceLinkNormal;
+
+const spidermanElement = document.querySelector("a[title=Spiderman]");
+
+let elemento = spidermanElement;
+
+while(elemento = elemento.nextElementSibling){
+    console.log(elemento.title)
+}
+
+while(elemento = elemento.previousElementSibling){
+    console.log(elemento.title)
+}
