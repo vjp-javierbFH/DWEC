@@ -26,11 +26,13 @@ function crearMatrizBotones() {
 
 document.addEventListener("DOMContentLoaded", asignarEventosBoton);
 
-function asignarEventosBoton() {
+function asignarEventosBoton(evento) {
 
     Event.preventDefault();
 
-    const boton = event.target;
+    const boton = evento.target;
+
+    let indice = parseInt(boton)
 }
 
 // Llamamos a la función al cargar la página
