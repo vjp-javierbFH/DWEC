@@ -38,10 +38,13 @@ class Ciclomotor {
         }
     }
 
+    //Método frenar
     frenar() {
+        // Si la moto esta encendida hace lo siguiente:
         if (this.encendida == true) {
-
+            // Si la resta de la velocidad actual y desaceleración es menor que 0
             if (this.velocidadActual -= this.desaceleracion < 0) {
+                // Inicializa la variable velocidadActual a 0
                 this.velocidadActual = 0;
                 console.log("Te has detenido.");
                 console.log(`Velocidad actual: ${this.velocidadActual}`);
@@ -54,6 +57,7 @@ class Ciclomotor {
         }
     }
 
+    // Método mostrarInfo
     mostrarInfo() {
         console.log(`------ ${this.marca} ------`);
         console.log(`Número de ruedas: ${this.numRuedas}`);
@@ -65,8 +69,10 @@ class Ciclomotor {
     }
 }
 
+// Declaro un objeto de la clase Ciclomotor y lo inicializo con el constructor por parámetro
 let ciclomotor = new Ciclomotor("Kawasaki", 70, 20);
 console.log("LA MOTO INICIALMENTE:");
+// Llamo al método 
 ciclomotor.mostrarInfo();
 console.log("LA MOTO TRAS ACELERAR:");
 ciclomotor.acelerar(); //No se puede acelerar una moto apagada
