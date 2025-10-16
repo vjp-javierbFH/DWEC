@@ -1,3 +1,4 @@
+// Declaro la variable monumento y las inicializo con los datos sacados del json de opendata caceres
 let monumento = {
     "uri": {
         "type": "uri",
@@ -30,6 +31,6 @@ let monumento = {
     }
 };
 
-// 
+// Pinto por pantalla el nombre y tipo de monumento
 console.log(`El nombre del monumento es ${monumento.rdfs_label.value}`);
 console.log(`El tipo de monumento es: ${monumento.clase.value}`)
