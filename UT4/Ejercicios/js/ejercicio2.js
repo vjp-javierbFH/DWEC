@@ -30,5 +30,6 @@ let monumento = {
     }
 };
 
+// 
 console.log(`El nombre del monumento es ${monumento.rdfs_label.value}`);
 console.log(`El tipo de monumento es: ${monumento.clase.value}`)

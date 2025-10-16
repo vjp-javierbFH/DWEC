@@ -1,4 +1,6 @@
+// Creo la clase Ciclomotor
 class Ciclomotor {
+    // Constructor
     constructor(marca, aceleracion, desaceleracion) {
         this.numRuedas = 2;
         this.velocidadMaxima = 120;
@@ -9,24 +11,29 @@ class Ciclomotor {
         this.encendida = false;
     }
 
+    // Método arrancar
     arrancar() {
+        // Inicializo la variable encendida a true
         this.encendida = true;
         console.log("Se mete y gira la llave, la moto arranca");
     }
 
+    // Método acelerar
     acelerar() {
+        // Si laa moto está encendida hace lo siguiente:
         if (this.encendida == true) {
-
+            // Si la suma de la velocidad actual y aceleración es menor que la velocidad máxima:
             if (this.velocidadActual + this.aceleracion <= this.velocidadMaxima) {
+                // Suma la velocidad actual y la aceleración, y cambia el resultado de velocidadActual
                 this.velocidadActual += this.aceleracion;
                 console.log(`Acelerando... Velocidad actual: ${this.velocidadActual}`);
-            } else {
+            } else { // Si no 
                 this.velocidadActual = this.velocidadMaxima;
                 console.log("Ya has alcanzado la velocidad máxima.");
                 console.log(`Velocidad actual: ${this.velocidadActual}`);
             }
 
-        } else {
+        } else { // Si no pinta un mensaje de que esta apagada
             console.log("No puedes acelerar porque la moto está apagada.");
         }
     }
