@@ -10,7 +10,10 @@ function procesarPeticion(event) {
 }
 
 function procesarDatos() {
-
+     // Recorremos todos los restaurantes y los mostramos
+    restaurantes.forEach(restaurante => {
+        console.log(pintarInfoRestaurante(restaurante));
+    });
 }
 
 function pintarInfoRestaurante(objetoRestaurante) {
