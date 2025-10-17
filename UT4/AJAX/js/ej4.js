@@ -1,7 +1,9 @@
-let peticionAjax = new XMLHttpRequest();
-peticionAjax.addEventListener("readystatechange", procesarPeticion);
-peticionAjax.open("GET", "http://opendata.caceres.es/GetData/GetData?dataset=om:Restaurante&format=json");
-peticionAjax.send();
+function cargarTabla() {
+    let peticionAjax = new XMLHttpRequest();
+    peticionAjax.addEventListener("readystatechange", procesarPeticion);
+    peticionAjax.open("GET", "http://opendata.caceres.es/GetData/GetData?dataset=om:Restaurante&format=json");
+    peticionAjax.send();
+}
 
 function procesarPeticion(event) {
     if (this.readyState == 4 && this.status == 200) {
@@ -10,7 +12,7 @@ function procesarPeticion(event) {
 }
 
 function procesarDatos() {
-     // Recorremos todos los restaurantes y los mostramos
+    // Recorremos todos los restaurantes y los mostramos
     restaurantes.forEach(restaurante => {
         console.log(pintarInfoRestaurante(restaurante));
     });
