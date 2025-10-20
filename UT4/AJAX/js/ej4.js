@@ -1,7 +1,7 @@
 function pintarInfoRestaurante(objetoRestaurante) {
     return {
         nombre: objetoRestaurante.rdfs_label.value,
-        web: objetoRestaurante.schema_url?.value ? objetoRestaurante.schema_url.value : ("—"),
+        web: objetoRestaurante.schema_url?.value ? objetoRestaurante.schema_url.value : (objetoRestaurante.uri?.value || "—"),
         direccion: objetoRestaurante.schema_address_streetAddress.value || "—",
         aforo: objetoRestaurante.om_capacidadPersonas?.value ? objetoRestaurante.om_capacidadPersonas.value : ("—")
     };
@@ -28,6 +28,7 @@ function procesarResultado(objetoResultado) {
 function cargarRestaurantes() {
     const tbody = document.getElementById("tableBody");
     tbody.innerHTML = "";
+
     restaurantes.forEach((restaurante, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `

@@ -20,9 +20,11 @@
         }
         th {
             background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
         }
         th {
-            background-color: teal;
+            border: 2px solid teal;
             padding: 10px;
             background-color: #e6f3ff;
         }
@@ -36,25 +38,35 @@
             width: 100%;
             margin-top: 10px;
         }
+        .scrollable-table {
+            max-height: 300px; /* Altura máxima antes de mostrar scroll */
+            overflow-y: auto; /* Scroll vertical */
+            display: block;
+        }
+        tbody {
+            display: table-row-group; /* Restaurar comportamiento de tabla */
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <h1>Restaurantes Cáceres</h1>
-        <button class="cargarRestaurantes" onclick="cargarRestaurantes()">Cargar Restaurantes</button>
-        <table id="restaurantesTable">
-            <thead>
-                <tr>
-                    <th>Índice</th>
-                    <th>Restaurante</th>
-                    <th>Web</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody"></tbody>
-        </table>
+        <button onclick="cargarRestaurantes()">Cargar Restaurantes</button>
+        <div class="scrollable-table">
+            <table id="restaurantesTable">
+                <thead>
+                    <tr>
+                        <th>Restaurante</th>
+                        <th>Nombre</th>
+                        <th>Web</th>
+                        <th>Dirección</th>
+                        <th>Máximo aforo</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
     </div>
 </body>
 
