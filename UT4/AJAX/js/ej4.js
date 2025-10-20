@@ -2,9 +2,9 @@ function pintarInfoRestaurante(objetoRestaurante) {
     let cadena = "";
     cadena += "Nombre: " + objetoRestaurante.rdfs_label.value + "\n";
     cadena += "Teléfono: " + objetoRestaurante.schema_telephone.value + "\n";
-    cadena += "Latitud: " + objetoRestaurante.geo_lat.value + "\n";
-    cadena += "Longitud: " + objetoRestaurante.geo_long.value + "\n";
-    cadena += "Uri: " + objetoRestaurante.uri.value + "\n";
+    cadena += "Web: " + objetoRestaurante.uri.value + "\n";
+    cadena += "Dirección: " + objetoRestaurante.schema_address_streetAddress.value + "\n";
+    cadena += "Teléfono: " + objetoRestaurante.schema_telephone.value + "\n";
     return cadena;
 }
 
