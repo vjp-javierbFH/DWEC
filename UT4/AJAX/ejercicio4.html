@@ -13,61 +13,72 @@
             width: 100%;
             margin-top: 10px;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid black;
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
             position: sticky;
             top: 0;
         }
+
         th {
             border: 2px solid teal;
             padding: 10px;
             background-color: #e6f3ff;
         }
+
         h1 {
             text-align: center;
             font-family: 'Comic Sans MS', cursive;
         }
+
+        /*Botón que al hacer click muestra los datos de los restaurantes*/
         button {
             padding: 5px 10px;
             cursor: pointer;
             width: 100%;
             margin-top: 10px;
         }
+
         .tabla_scroll {
-            max-height: 300px; /* Altura máxima antes de mostrar scroll */
-            overflow-y: auto; /* Scroll vertical */
+            max-height: 300px;
+            /* Altura máxima antes de mostrar scroll */
+            overflow-y: auto;
+            /* Scroll vertical */
             display: block;
         }
+
         tbody {
-            display: table-row-group; /* Restaurar comportamiento de tabla */
+            display: table-row-group;
+            /* Restaurar comportamiento de tabla */
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Restaurantes Cáceres</h1>
-        <button onclick="cargarRestaurantes()">Cargar Restaurantes</button>
-        <div class="tabla_scroll">
-            <table id="restaurantesTable">
-                <thead>
-                    <tr>
-                        <th>Restaurante</th>
-                        <th>Nombre</th>
-                        <th>Web</th>
-                        <th>Dirección</th>
-                        <th>Máximo aforo</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody"></tbody>
-            </table>
-        </div>
+    <h1>Restaurantes Cáceres</h1>
+    <button onclick="cargarRestaurantes()">Cargar Restaurantes</button>
+    <div class="tabla_scroll">
+        <table id="restaurantesTable">
+            <thead>
+                <tr>
+                    <th>Restaurante</th>
+                    <th>Nombre</th>
+                    <th>Web</th>
+                    <th>Dirección</th>
+                    <th>Máximo aforo</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
     </div>
+
 </body>
 
 </html>
