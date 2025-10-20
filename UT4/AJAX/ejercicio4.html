@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Javier BFH">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de restaurantes (AJAX)</title>
+    <title>Restaurantes Cáceres (AJAX)</title>
     <script src="js/ej4.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            border: 2px solid teal;
+            padding: 10px;
+            background-color: #e6f3ff;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>Restaurantes Cáceres</h1>
+        <button onclick="cargarRestaurantes()">Cargar Restaurantes</button>
+        <table id="restaurantesTable">
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Restaurante</th>
+                    <th>Web</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
 </body>
+
 </html>
