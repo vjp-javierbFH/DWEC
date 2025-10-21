@@ -1,15 +1,18 @@
+// Declaro un objeto
 let DiscoMusica = {
+    // Propiedades
     titulo: "Origins",
     autor: "Imagine Dragons",
     añoPublicacion: 2018,
     numVentas: 27000,
-}
+} // Función getInfo que devuelve los datos del disco
 DiscoMusica.getInfo = function () {
     return "Título: " + this.titulo + ", autor: " + this.autor + ", año de publicación: " + this.añoPublicacion + " y número de ventas";
 }
+// Pinto el getInfo
 console.log(DiscoMusica.getInfo());
 
-
+// Objeto calleCiudad
 let calleCiudad = {
     nombre: "Calle del Sol",
     longitud: 50,
@@ -25,9 +28,11 @@ let calleCiudad = {
         }
     ]
 }
+// Función getInfo
 calleCiudad.getInfo = function () {
     let cadena = "Nombre de la calle: " + this.nombre + ", longitud: " + this.longitud + " y estabelcimientos: \n";
 
+    // Reorre el array de lista `para mostrar nombre
     for (let i = 0; i < this.lista.length; i++) {
         cadena += this.lista[i].nombre + "\n"
     }
@@ -35,6 +40,7 @@ calleCiudad.getInfo = function () {
 }
 console.log(calleCiudad.getInfo());
 
+// 
 let coche = {
     modelo: "a4",
     dueño:
