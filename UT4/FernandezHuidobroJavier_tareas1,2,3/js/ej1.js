@@ -1,16 +1,16 @@
 // Declaro un objeto
-let DiscoMusica = {
+let discoMusica = {
     // Propiedades
     titulo: "Origins",
     autor: "Imagine Dragons",
     añoPublicacion: 2018,
     numVentas: 27000,
 } // Función getInfo que devuelve los datos del disco
-DiscoMusica.getInfo = function () {
+discoMusica.getInfo = function () {
     return "Título: " + this.titulo + ", autor: " + this.autor + ", año de publicación: " + this.añoPublicacion + " y número de ventas";
 }
 // Pinto el getInfo
-console.log(DiscoMusica.getInfo());
+console.log(discoMusica.getInfo());
 
 // Objeto calleCiudad
 let calleCiudad = {
@@ -40,7 +40,7 @@ calleCiudad.getInfo = function () {
 }
 console.log(calleCiudad.getInfo());
 
-// 
+// Objeto coche
 let coche = {
     modelo: "a4",
     dueño:
@@ -56,8 +56,23 @@ let coche = {
     }
 
 }
+// Función getInfo
 coche.getInfo = function () {
     let cadena = "Modelo: " + this.modelo + ", nombre del dueño " + this.dueño.nombre + " y su edad " + this.dueño.edad + ", marca de coche: " + this.marca.nombre + " y año de creación: " + this.marca.añoCreacion;
     return cadena;
 }
 console.log(coche.getInfo());
+
+let obraTeatro = {
+    titulo: "Spider-Man",
+    fechaEstreno: "8 de julio de 1997",
+    director: {
+        nombre: "Sam",
+        apellidos: "Raimi"
+    },
+    listaActores: [
+        {
+
+        }
+    ]
+}
