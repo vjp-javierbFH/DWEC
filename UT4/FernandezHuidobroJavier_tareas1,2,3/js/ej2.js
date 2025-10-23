@@ -22,6 +22,3 @@ class Trabajador {
 
     }
 }
-
-let trabajador1 = new Trabajador("Javier", 23, 50);
-trabajador1.getInfo();
