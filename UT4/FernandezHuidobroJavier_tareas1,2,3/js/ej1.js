@@ -63,16 +63,39 @@ coche.getInfo = function () {
 }
 console.log(coche.getInfo());
 
+// Objeto obraTeatro
 let obraTeatro = {
     titulo: "Spider-Man",
     fechaEstreno: "8 de julio de 1997",
     director: {
         nombre: "Sam",
-        apellidos: "Raimi"
+        apellidos: "Raimi",
+        añoNacimiento: 1959,
+        obras: [{
+            titulo: "Premonición"
+        },
+        {
+            titulo: "Darkman"
+        },
+        {
+            titulo: "Arrástrame al infierno"
+        }]
     },
     listaActores: [
         {
-
+            nombre: "Tobey Maguire",
+            edad: 50,
+            numActuaciones: 25
+        },
+        {
+            nombre: "Kirsten Dunst",
+            edad: 43,
+            numActuaciones:52
+        },
+        {
+            nombre: "Willem Dafoe",
+            edad: 69,
+            numActuaciones: 147
         }
     ]
 }
