@@ -31,8 +31,8 @@ class Restaurante {
     }
 
     // Métodos
-    anadirTrabajador(trabajadores) {
-        trabajadores.push();
+    anadirTrabajador(trabajador) {
+        this.trabajadores.push(trabajador);
     }
 
     getInfo() {
