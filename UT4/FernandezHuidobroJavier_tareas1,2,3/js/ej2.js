@@ -44,7 +44,7 @@ class Restaurante {
 
     }
     getPagosSemanales() {
-        this.trabajadores.reduce((total, trabajador) => total + trabajador.getSaldoSemanal(), 0);
+        return this.trabajadores.reduce((total, trabajador) => total + trabajador.getSaldoSemanal(), 0);
     }
 }
 
@@ -54,5 +54,7 @@ let restaurante = new Restaurante("La tapería");
 restaurante.getInfo();
 
 restaurante.anadirTrabajador(new Trabajador("Pepe", 40, 10));
+restaurante.anadirTrabajador(new Trabajador("Laura",35,15));
+restaurante.anadirTrabajador(new Trabajador("Marcos",20,10))
 restaurante.getInfo();
 console.log("Mantener a los trabajadores del restaurante cuesta: " + restaurante.getPagosSemanales());
