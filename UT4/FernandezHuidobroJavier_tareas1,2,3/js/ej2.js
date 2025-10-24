@@ -13,11 +13,10 @@ class Trabajador {
         return this.numHorasSemanales * this.salarioPorHora;
     }
     getInfo() {
-        console.log("*** Trabajador ***");
         console.log(`Nombre: ${this.nombre}`);
         console.log(`Horas trabajadas semanalmente: ${this.numHorasSemanales}`);
         console.log(`Salario que gana por hora: ${this.salarioPorHora}`);
-        console.log("******************");
+        console.log("*******************");
 
     }
 }
@@ -30,16 +29,22 @@ class Restaurante {
     }
 
     // Métodos
+    // Añadir un objeto trabajador al array de trabajadores
     anadirTrabajador(trabajador) {
         this.trabajadores.push(trabajador);
     }
 
+    // Método que muestra la info del restauante con sus trabajadores
     getInfo() {
         console.log(`INFORMACIÓN DEL RESTAURANTE: ${this.nombre}`);
 
+        // Recorrer el array para mostrar info de trabajadores
         for (let i = 0; i < this.trabajadores.length; i++) {
+            console.log(`*** Trabajador ${i} ***`);
             this.trabajadores[i].getInfo();
             this.trabajadores
+            console.log("");
+            
         }
 
     }
