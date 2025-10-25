@@ -100,17 +100,20 @@ let obraTeatro = {
     ]
 }
 obraTeatro.getInfo = function () {
+    // Variable de tipo string
     let cadena = "Obra: " + this.titulo + "\n";
     cadena += "Fecha de estreno: " + this.fechaEstreno + "\n";
     cadena += "Director: " + this.director.nombre + " " + this.director.apellidos +
         " (nacido en " + this.director.añoNacimiento + ")\n";
 
     cadena += "Obras dirigidas anteriormente:\n";
+    // Recorro el array de director
     for (let i = 0; i < this.director.obras.length; i++) {
         cadena += "   - " + this.director.obras[i].titulo + "\n";
     }
 
     cadena += "Lista de actores:\n";
+    // Recorro el array de actores
     for (let i = 0; i < this.listaActores.length; i++) {
         let actor = this.listaActores[i];
         cadena += "   - " + actor.nombre + ", edad: " + actor.edad +
