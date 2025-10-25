@@ -90,7 +90,7 @@ let obraTeatro = {
         {
             nombre: "Kirsten Dunst",
             edad: 43,
-            numActuaciones:52
+            numActuaciones: 52
         },
         {
             nombre: "Willem Dafoe",
@@ -99,3 +99,24 @@ let obraTeatro = {
         }
     ]
 }
+obraTeatro.getInfo = function () {
+    let cadena = "Obra: " + this.titulo + "\n";
+    cadena += "Fecha de estreno: " + this.fechaEstreno + "\n";
+    cadena += "Director: " + this.director.nombre + " " + this.director.apellidos +
+        " (nacido en " + this.director.añoNacimiento + ")\n";
+
+    cadena += "Obras dirigidas anteriormente:\n";
+    for (let i = 0; i < this.director.obras.length; i++) {
+        cadena += "   - " + this.director.obras[i].titulo + "\n";
+    }
+
+    cadena += "Lista de actores:\n";
+    for (let i = 0; i < this.listaActores.length; i++) {
+        let actor = this.listaActores[i];
+        cadena += "   - " + actor.nombre + ", edad: " + actor.edad +
+            ", número de actuaciones: " + actor.numActuaciones + "\n";
+    }
+
+    return cadena;
+}
+console.log(obraTeatro.getInfo());
