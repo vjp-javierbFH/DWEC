@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3</title>
     <style>
-        .d-none { display: none; }
-        .entrada { margin: 20px; padding: 10px; border: 1px solid #ccc; }
-        div p {
+        .d-none {
+            display: none;
+        }
+
+        .entrada {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .entrada>p {
             background-color: black;
             color: white;
+            margin: 0;
+            padding: 5px;
         }
-        div div{
+
+        .entrada>div {
             background-color: beige;
+            padding: 10px;
+        }
+
+        .entrada div div {
+            background-color: #ffffff;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .entrada div p {
+            background-color: transparent;
+            color: black;
+        }
+
+        .entrada>p strong:first-child {
+            color: white;
+        }
+
+        strong {
+            color: black;
         }
     </style>
 </head>
+
 <body>
     <div id="posts"></div>
     <script src="js/ej3.js"></script>
 </body>
+
 </html>
