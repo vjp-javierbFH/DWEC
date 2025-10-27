@@ -30,7 +30,7 @@ class Restaurante {
 
     // Métodos
     // Añadir un objeto trabajador al array de trabajadores
-    anadirTrabajador(trabajador) {
+    añadirTrabajador(trabajador) {
         this.trabajadores.push(trabajador);
     }
 
@@ -44,22 +44,24 @@ class Restaurante {
             this.trabajadores[i].getInfo();
             this.trabajadores
             console.log("");
-            
+
         }
 
     }
+    // Método que devuelve un entero
     getPagosSemanales() {
         return this.trabajadores.reduce((total, trabajador) => total + trabajador.getSaldoSemanal(), 0);
     }
 }
 
 console.log("Mostrar información...");
-
+// Creo un objeto de la clase Restaurante
 let restaurante = new Restaurante("La tapería");
 restaurante.getInfo();
 
-restaurante.anadirTrabajador(new Trabajador("Pepe", 40, 10));
-restaurante.anadirTrabajador(new Trabajador("Laura",35,15));
-restaurante.anadirTrabajador(new Trabajador("Marcos",20,10))
+// Llamo al método a añadirTrabajador para inicializar por constructor parametrizado tres trabajadores y almacenarlos en un array
+restaurante.añadirTrabajador(new Trabajador("Pepe", 40, 10));
+restaurante.añadirTrabajador(new Trabajador("Laura", 35, 15));
+restaurante.añadirTrabajador(new Trabajador("Marcos", 20, 10))
 restaurante.getInfo();
 console.log("Mantener a los trabajadores del restaurante cuesta: " + restaurante.getPagosSemanales());

@@ -16,7 +16,7 @@ function procesarPeticion(event) {
 // Procesar los resultados y crear posts
 function procesarResultado(objetoResultado) {
     const postsContainer = document.getElementById("posts");
-    for (let post of objetoResultado) { // Iterar directamente sobre el arreglo
+    for (let post of objetoResultado) {
         crearPost(post, postsContainer);
     }
 }
@@ -26,7 +26,7 @@ function crearPost(post, container) {
     let div = document.createElement("div");
     div.classList.add("entrada");
     div.innerHTML = `
-        <p><strong>TITULO</strong>: ${post.title}</p>
+        <p><strong class="titulo-label">TITULO</strong>: ${post.title}</p>
         <div>
             <p><strong>Contenido</strong>: ${post.body}</p>
             <button class="mostrarUsuario">Usuario del Post</button>
@@ -36,8 +36,6 @@ function crearPost(post, container) {
             </div>
             <div class="comentarios d-none">
                 <p><strong>Comentarios: </strong></p>
-                <p>- Comentario1: </p>
-                <p>- Comentario2: </p>
             </div>
         </div>`;
 
@@ -45,9 +43,19 @@ function crearPost(post, container) {
     div.querySelector(".mostrarUsuario").addEventListener("click", function () {
         let usuarioDiv = div.querySelector(".usuario");
         if (usuarioDiv.classList.contains("d-none")) {
-            cargarUsuario(post.userId, div);
+            cargarUsuario(post.id, div); // Pasamos post.id como userId
         } else {
             usuarioDiv.classList.toggle("d-none");
+        }
+    });
+
+    // Agregar evento al botón de comentarios
+    div.querySelector(".mostrarComentarios").addEventListener("click", function () {
+        let comentariosDiv = div.querySelector(".comentarios");
+        if (comentariosDiv.classList.contains("d-none")) {
+            cargarComentarios(post.id, div);
+        } else {
+            comentariosDiv.classList.toggle("d-none");
         }
     });
 
@@ -61,11 +69,31 @@ function cargarUsuario(userId, div) {
     userRequest.addEventListener("readystatechange", function () {
         if (this.readyState == 4 && this.status == 200) {
             let user = JSON.parse(this.responseText);
-            let userNameSpan = div.querySelector(`#nombreUser-${post.id}`);
+            let userNameSpan = div.querySelector(`#nombreUser-${userId}`); // Usamos userId para el selector
             userNameSpan.textContent = user.name;
             div.querySelector(".usuario").classList.remove("d-none");
         }
     });
     userRequest.open("GET", `https://jsonplaceholder.typicode.com/users/${userId}`);
     userRequest.send();
+}
+
+// Obtener y mostrar comentarios
+function cargarComentarios(postId, div) {
+    let comentariosRequest = new XMLHttpRequest();
+    comentariosRequest.addEventListener("readystatechange", function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let comentarios = JSON.parse(this.responseText);
+            let comentariosDiv = div.querySelector(".comentarios");
+            comentariosDiv.innerHTML = `<p><strong>Comentarios: </strong></p>`; // Reiniciar contenido
+            comentarios.forEach(comentario => {
+                let p = document.createElement("p");
+                p.textContent = `- ${comentario.name}`;
+                comentariosDiv.appendChild(p);
+            });
+            comentariosDiv.classList.remove("d-none");
+        }
+    });
+    comentariosRequest.open("GET", `https://jsonplaceholder.typicode.com/comments?postId=${postId}`);
+    comentariosRequest.send();
 }
