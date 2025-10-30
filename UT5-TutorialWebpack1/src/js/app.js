@@ -24,3 +24,5 @@ function updateSecretParagraph() {
         secretParagraph.style.display = 'none';
     }
 }
+
+import { secretButton, secretParagraph } from "./dom-loader";
