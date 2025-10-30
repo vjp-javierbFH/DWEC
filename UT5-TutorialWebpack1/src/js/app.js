@@ -1,9 +1,4 @@
-import { secretButton } from "./dom-loader";
-
 var showSecret = false;
-
-// Importar secretButton y secretParagraph desde dom-loader.js
-import {secretButton, secretParagraph} from './dom-loader';
 
 secretButton.addEventListener('click', toggleSecretState);
 updateSecretParagraph();
