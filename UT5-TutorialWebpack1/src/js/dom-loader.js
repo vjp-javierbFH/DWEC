@@ -1,2 +1,2 @@
-var secretButton = document.querySelector('#secret-button');
-var secretParagraph = document.querySelector('#secret-paragraph');
+export let secretButton = document.querySelector('#secret-button');
+export let secretParagraph = document.querySelector('#secret-paragraph');
