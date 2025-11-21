@@ -28,7 +28,7 @@ function crearLineaChart(labels, data) {
 }
 
 // Datos de ejemplo
-const labels = [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009];
+const labels = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009];
 const data = [];
 // Cada año gana un 3% más que el año anterior
 for (let i = 0; i < labels.length; i++) {
