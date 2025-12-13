@@ -1,0 +1,37 @@
+[
+    {
+        "name": "La Madrila",
+        "phone": "+34 927 22 22 22",
+        "kitchen": "No",
+        "lat": 39.4735,
+        "lon": -6.3750
+    },
+    {
+        "name": "Mastropiero Gastrobar y Jardín",
+        "phone": "+34 927 21 54 86",
+        "kitchen": "Sí",
+        "lat": 39.4760,
+        "lon": -6.3715
+    },
+    {
+        "name": "El Corral de las Cigüeñas",
+        "phone": "+34 927 24 64 20",
+        "kitchen": "No",
+        "lat": 39.4740,
+        "lon": -6.3700
+    },
+    {
+        "name": "Habana 7",
+        "phone": "+34 927 21 00 00",
+        "kitchen": "No",
+        "lat": 39.4700,
+        "lon": -6.3780
+    },
+    {
+        "name": "Las Claras",
+        "phone": "+34 927 12 34 56",
+        "kitchen": "Sí",
+        "lat": 39.4690,
+        "lon": -6.3790
+    }
+]
