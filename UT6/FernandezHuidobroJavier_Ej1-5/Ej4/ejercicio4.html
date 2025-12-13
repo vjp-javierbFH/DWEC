@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4: Web Storage API</title>
+    <link rel="stylesheet" href="css/ej4.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Acceso y edad</h1>
+        <p class="description">
+            En esta web se queda registrado el acceso de los usuarios y su edad.
+            Puedes añadir nuevos usuarios y también puedes consultar los usuarios ya inscritos con su correspondiente
+            edad.
+        </p>
+
+        <div class="form-group">
+            <label for="username">Introduce tu nombre:</label>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Nombre">
+                <button class="btn-primary" onclick="checkUser()">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Hidden section for age input -->
+        <div id="age-input-section" class="form-group">
+            <label for="age">Usuario nuevo. Introduce tu edad:</label>
+            <div class="input-group">
+                <input type="number" id="age" placeholder="Edad" min="0" max="120">
+                <button class="btn-primary" onclick="saveNewUser()">Guardar</button>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="consult-section">
+            <p style="margin-top: 0; margin-bottom: 0.5rem; font-weight: 500;">Puedes consultar quién se ha registrado
+                en esta Web:</p>
+            <button class="btn-consult" onclick="listUsers()">Consultar</button>
+        </div>
+
+        <div id="result-area"></div>
+    </div>
+
+    <script src="js/ej4.js"></script>
+
+</body>
+
+</html>
