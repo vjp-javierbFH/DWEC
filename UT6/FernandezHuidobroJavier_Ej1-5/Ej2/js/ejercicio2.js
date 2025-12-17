@@ -38,10 +38,10 @@ circlePiscina.bindPopup(
 // Coordenadas centro: 40.0427, -6.0864
 // Definimos un polígono rectangular simple alrededor del punto
 var iesPolygonCords = [
-    [40.0430, -6.0867],
-    [40.0430, -6.0861],
-    [40.0424, -6.0861],
-    [40.0424, -6.0867]
+    [40.0433, -6.0867],
+    [40.0433, -6.0864],
+    [40.0423, -6.0861],
+    [40.0423, -6.0867]
 ];
 var polygonIES = L.polygon(iesPolygonCords, {
     color: 'green',
