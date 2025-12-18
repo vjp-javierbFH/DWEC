@@ -1,5 +1,7 @@
-import { crearHeader } from "./components/header";
+import { Carrito } from "./components/Carrito";
+import { actualizarHeader } from "./components/header";
 
-document.addEventListener("DOMContentLoaded", () => {
-    crearHeader();
+document.addEventListener("DOMContentLoaded", async () => {
+    // Inicializa el header con contador desde DB
+    await Carrito.actualizarCabeceraCarrito();
 });

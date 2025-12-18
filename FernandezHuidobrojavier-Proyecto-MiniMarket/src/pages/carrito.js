@@ -1,26 +1,39 @@
-import { crearHeader } from "../components/header";
+import { DatabaseCarrito } from "../db/DatabaseCarrito";
+import { Carrito } from "../components/Carrito";
+import { Producto } from "../components/Producto";
 
-crearHeader();
+document.addEventListener("DOMContentLoaded", async () => {
+    const contenedor = document.getElementById("carrito");
 
-const dbRequest = indexedDB.open("carritoDB", 1);
+    // Crear tabla
+    const tabla = document.createElement("table");
+    tabla.innerHTML = `
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
+    contenedor.appendChild(tabla);
 
-dbRequest.onsuccess = e => {
-    const db = e.target.result;
-    const tx = db.transaction("carrito", "readonly");
-    const store = tx.objectStore("carrito");
-    const getAllRequest = store.getAll();
+    const tbody = tabla.querySelector("tbody");
 
-    getAllRequest.onsuccess = () => {
-        const carrito = getAllRequest.result;
-        const contenedor = document.getElementById("carrito");
+    // Obtener productos de la DB
+    const productosBD = await DatabaseCarrito.obtenerProductos();
 
-        if (carrito.length === 0) {
-            contenedor.innerHTML = "<p>El carrito está vacío.</p>";
-            return;
-        }
+    productosBD.forEach(productoBD => {
+        const tr = Producto.crearTr(productoBD, Carrito.eliminarProductoCarrito.bind(Carrito));
+        tbody.appendChild(tr);
+    });
 
-        carrito.forEach(item => {
-            contenedor.innerHTML += `<p>Producto ID: ${item.id} | Cantidad: ${item.cantidad}</p>`;
-        });
-    };
-};
+    // Calcular precio final y mostrarlo
+    const precioFinal = await Carrito.calcularPrecioFinal();
+    const footer = document.createElement("p");
+    footer.textContent = `Precio final: ${precioFinal.toFixed(2)} €`;
+    contenedor.appendChild(footer);
+});
