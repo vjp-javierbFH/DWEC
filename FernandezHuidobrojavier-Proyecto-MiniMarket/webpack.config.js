@@ -1,49 +1,34 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const pages = ['index', 'muebles', 'electronica', 'decoracion', 'cesta'];
 
 module.exports = {
-    entry: {
-        index: "./src/index.js",
-        electronica: "./src/pages/electronica.js",
-        muebles: "./src/pages/muebles.js",
-        decoracion: "./src/pages/decoracion.js",
-        carrito: "./src/pages/carrito.js"
-    },
+    entry: pages.reduce((config, page) => {
+        config[page] = `./src/js/${page}.js`;
+        return config;
+    }, {}),
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name].bundle.js",
-        clean: true
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
+    module: {
+        rules: [
+            { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
+        ],
+    },
+    plugins: pages.map(page =>
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: `./src/templates/${page}.html`,
+            filename: `${page}.html`,
+            chunks: [page]
+        })
+    ),
     devServer: {
-        static: "./dist",
+        static: './dist',
         port: 8080,
         open: true
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/templates/index.html",
-            filename: "index.html",
-            chunks: ["index"]
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/templates/electronica.html",
-            filename: "electronica.html",
-            chunks: ["electronica"]
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/templates/muebles.html",
-            filename: "muebles.html",
-            chunks: ["muebles"]
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/templates/decoracion.html",
-            filename: "decoracion.html",
-            chunks: ["decoracion"]
-        }),
-        new HtmlWebpackPlugin({
-            template: "./src/templates/carrito.html",
-            filename: "carrito.html",
-            chunks: ["carrito"]
-        })
-    ]
+    }
 };

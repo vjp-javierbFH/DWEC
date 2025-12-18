@@ -1,5 +1,5 @@
-import { crearHeader } from "../components/header";
-import { guardarProducto } from "../db/indexedDB";
+import { crearHeader } from "./header";
+import { guardarProducto } from "./indexedDB";
 
 crearHeader();
 
