@@ -3,15 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mini-Market</title>
+    <title>Mini-Market | Inicio</title>
 </head>
 
 <body>
-    <header id="header"></header>
-
+    <header>
+        <nav>
+            <h1>Mini-Market</h1>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="electronica.html">Electrónica</a></li>
+                <li><a href="muebles.html">Muebles</a></li>
+                <li><a href="decoracion.html">Decoración</a></li>
+                <li><a href="cesta.html">Cesta (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h1>Mini-Market</h1>
-        <p>Bienvenido a la tienda</p>
+        <section class="hero">
+            <h2>Ofertas Black Friday</h2>
+            <p>¡Descuentos increíbles en todas las secciones!</p>
+        </section>
+        <div id="productos-destacados" class="grid-productos"></div>
     </main>
 </body>
 
