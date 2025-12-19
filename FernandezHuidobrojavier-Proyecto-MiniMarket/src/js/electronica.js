@@ -1,34 +1,54 @@
-import '../assets/style.css';
+import '../style.css';
+import { renderHeader } from './header';
+import { Carrito } from './cesta';
 
-const container = document.getElementById('productos-container');
+const contenedor = document.getElementById('contenedor');
 
-async function cargarProductos() {
+async function iniciar() {
+    await renderHeader();
+
     try {
-        const response = await fetch('http://localhost:3000/electronica');
-        const productos = await response.json();
+        // Intentamos conectar al servidor de datos
+        const res = await fetch('http://localhost:3000/electronica');
 
-        productos.forEach(prod => {
+        if (!res.ok) throw new Error("No se pudo conectar con el servidor de datos");
+
+        const datos = await res.json();
+        contenedor.innerHTML = "";
+
+        datos.forEach(p => {
             const card = document.createElement('div');
-            card.className = 'producto-card';
+            card.className = 'card';
+
+            // Estructura mejorada con manejo de error en imagen
             card.innerHTML = `
-                <img src="${prod.imagen}" alt="${prod.nombre}">
-                <h3>${prod.nombre}</h3>
-                <p>Precio: ${prod.precio}€</p>
-                <button onclick="agregarAlCarrito(${JSON.stringify(prod).replace(/"/g, '&quot;')})">Comprar</button>
+                <div class="card-image-container">
+                    <img src="${p.imagen}" 
+                         alt="${p.nombre}" 
+                         class="producto-foto"
+                         onerror="this.src='https://via.placeholder.com/200x200?text=Error+Imagen'">
+                </div>
+                <div class="card-info">
+                    <h3>${p.nombre}</h3>
+                    <p class="precio">${p.precio}€</p>
+                </div>
             `;
-            container.appendChild(card);
+
+            const btn = document.createElement('button');
+            btn.className = 'btn-comprar';
+            btn.innerText = "Añadir al carrito";
+            btn.onclick = () => Carrito.agregar(p);
+
+            card.appendChild(btn);
+            contenedor.appendChild(card);
         });
     } catch (error) {
-        console.error("Error cargando productos", error);
+        console.error("Error:", error);
+        contenedor.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
+                <p>⚠️ No se pudieron cargar los productos.</p>
+            </div>
+        `;
     }
 }
-
-// Función global para el carrito (usando LocalStorage)
-window.agregarAlCarrito = (producto) => {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push(producto);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert('Producto añadido');
-};
-
-cargarProductos();
+iniciar();

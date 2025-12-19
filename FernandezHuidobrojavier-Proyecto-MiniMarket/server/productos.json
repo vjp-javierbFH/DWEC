@@ -1,8 +1,0 @@
-{
-  "productos": [
-    { "id": 1, "nombre": "TV Samsung", "categoria": "electronica", "precio": 599 },
-    { "id": 2, "nombre": "Portátil HP", "categoria": "electronica", "precio": 899 },
-    { "id": 3, "nombre": "Sofá", "categoria": "muebles", "precio": 350 },
-    { "id": 4, "nombre": "Lámpara", "categoria": "decoracion", "precio": 49 }
-  ]
-}

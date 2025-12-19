@@ -1,19 +1,16 @@
-let db;
+export const openDB = () => {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open("MiniMarketDB", 1);
 
-const request = indexedDB.open("carritoDB", 1);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains("carrito")) {
+                // Importante: id_db es la clave autoincremental para IndexedDB
+                db.createObjectStore("carrito", { keyPath: "id_db", autoIncrement: true });
+            }
+        };
 
-request.onupgradeneeded = e => {
-    db = e.target.result;
-    db.createObjectStore("carrito", { keyPath: "id" });
+        request.onsuccess = (e) => resolve(e.target.result);
+        request.onerror = (e) => reject("Error al abrir IndexedDB");
+    });
 };
-
-request.onsuccess = e => {
-    db = e.target.result;
-};
-
-export function guardarProducto(id) {
-    const tx = db.transaction("carrito", "readwrite");
-    const store = tx.objectStore("carrito");
-
-    store.put({ id, cantidad: 1 });
-}

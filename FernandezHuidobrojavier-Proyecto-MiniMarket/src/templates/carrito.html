@@ -3,21 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tu Cesta | Mini-Market</title>
+    <title>Mini-Market | Mi Cesta</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <h1>Mini-Market - Mi Carrito</h1>
-            <a href="index.html">Volver a la tienda</a>
-        </nav>
-    </header>
+    <header></header>
+
     <main>
-        <div id="lista-cesta"></div>
-        <div class="resumen">
-            <h3 id="total">Total: 0€</h3>
-            <button id="btn-pagar">Finalizar Compra</button>
+        <div class="hero">
+            <h1>Tu Carrito</h1>
+        </div>
+
+        <div id="contenedor-cesta" class="lista-carrito"></div>
+
+        <div class="total-seccion">
+            <h3>Total: <span id="precio-total">0</span>€</h3>
+            <button id="btn-vaciar" class="btn-eliminar"
+                style="margin-top:10px; padding:10px; background:#dc3545; color:white; border:none; border-radius:5px; cursor:pointer;">Vaciar
+                Carrito</button>
         </div>
     </main>
 </body>
