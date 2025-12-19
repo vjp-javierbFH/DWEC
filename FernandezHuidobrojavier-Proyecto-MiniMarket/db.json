@@ -9,8 +9,8 @@
         {
             "id": 2,
             "nombre": "Gigabyte GeForce RTX 2070",
-            "precio": 429,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1084/10844922/1671-energy-sistem-hyperbeat-altavoz-bluetooth-con-luces-led-80w-negro.jpg"
+            "precio": 1667,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/24/246129/1.jpg"
         }
     ],
     "muebles": [
@@ -24,9 +24,9 @@
     "decoracion": [
         {
             "id": 4,
-            "nombre": "Lámpara de pie LED",
+            "nombre": "Lámpara de pie moderna",
             "precio": 45,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1094/10949017/1682-homcom-lampara-de-pie-led-regulable-42w-con-control-remoto-y-tactil-blanco.jpg"
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1094/10949045/1833-homcom-lampara-de-pie-moderna-150-cm-con-pantalla-de-tela-luz-nocturna-blanco.jpg"
         }
     ]
 }

@@ -3,6 +3,7 @@ import { DatabaseCarrito } from './DatabaseCarrito';
 import { renderHeader } from './header';
 
 export class Carrito {
+    // Añadir producto
     static async agregar(producto) {
         try {
             await DatabaseCarrito.add(producto);
@@ -13,18 +14,33 @@ export class Carrito {
         }
     }
 
+    // Eliminar un solo producto por su ID de IndexedDB
     static async eliminar(id_db) {
         await DatabaseCarrito.delete(id_db);
-        await renderHeader();
-        await pintarCesta();
+        await renderHeader(); // Actualiza el contador del header
+        await pintarCesta();  // Refresca la lista visual
     }
 
+    // Calcular el precio total
     static async obtenerTotal() {
         const productos = await DatabaseCarrito.getAll();
         return productos.reduce((acc, p) => acc + parseFloat(p.precio), 0);
     }
+
+    // Vaciar toda la base de datos
+    static async vaciar() {
+        const productos = await DatabaseCarrito.getAll();
+        if (productos.length === 0) return;
+
+        // Borramos todos los elementos usando Promise.all para esperar a que todos terminen
+        await Promise.all(productos.map(p => DatabaseCarrito.delete(p.id_db)));
+        
+        await renderHeader();
+        await pintarCesta();
+    }
 }
 
+// Función para renderizar los productos en la página de carrito.html
 async function pintarCesta() {
     const contenedor = document.getElementById('contenedor-cesta');
     const totalElemento = document.getElementById('precio-total');
@@ -34,12 +50,18 @@ async function pintarCesta() {
     const productos = await DatabaseCarrito.getAll();
     contenedor.innerHTML = "";
 
+    // Si no hay productos, mostramos mensaje
     if (productos.length === 0) {
-        contenedor.innerHTML = "<p style='text-align:center; padding:20px;'>La cesta está vacía.</p>";
+        contenedor.innerHTML = `
+            <div style="text-align:center; padding:50px; grid-column: 1/-1;">
+                <p>Tu cesta está vacía.</p>
+                <a href="index.html" style="color: var(--accent); text-decoration: none;">Ir a la tienda</a>
+            </div>`;
         if (totalElemento) totalElemento.innerText = "0";
         return;
     }
 
+    // Dibujamos cada producto
     productos.forEach(p => {
         const item = document.createElement('div');
         item.className = 'item-cesta';
@@ -49,7 +71,7 @@ async function pintarCesta() {
             </div>
             <div class="info-item">
                 <h3>${p.nombre}</h3>
-                <p>${p.precio}€</p>
+                <p class="precio-item">${p.precio}€</p>
             </div>
         `;
 
@@ -62,20 +84,23 @@ async function pintarCesta() {
         contenedor.appendChild(item);
     });
 
+    // Actualizamos el precio total
     const total = await Carrito.obtenerTotal();
     if (totalElemento) totalElemento.innerText = total.toFixed(2);
 }
 
-// Botón vaciar carrito
-document.addEventListener('click', async (e) => {
-    if (e.target && e.target.id === 'btn-vaciar') {
-        const productos = await DatabaseCarrito.getAll();
-        for (let p of productos) {
-            await DatabaseCarrito.delete(p.id_db);
-        }
-        await pintarCesta();
-        await renderHeader();
+// Lógica para detectar el clic en el botón "Vaciar Carrito"
+document.addEventListener('DOMContentLoaded', () => {
+    // Pintamos la cesta al cargar la página
+    pintarCesta();
+
+    // Vinculamos el botón de vaciar
+    const btnVaciar = document.getElementById('btn-vaciar');
+    if (btnVaciar) {
+        btnVaciar.addEventListener('click', async () => {
+            if (confirm("¿Estás seguro de que quieres vaciar toda la cesta?")) {
+                await Carrito.vaciar();
+            }
+        });
     }
 });
-
-pintarCesta();

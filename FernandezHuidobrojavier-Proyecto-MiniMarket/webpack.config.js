@@ -13,11 +13,15 @@ module.exports = {
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/', // Ayuda a que las rutas no se rompan
         clean: true,
     },
     module: {
         rules: [
-            { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
     plugins: [
@@ -45,13 +49,15 @@ module.exports = {
             template: './src/templates/carrito.html',
             filename: 'carrito.html',
             chunks: ['cesta']
-        }),
+        })
     ],
     devServer: {
-        static: path.resolve(__dirname, 'dist'),
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
         port: 8080,
-        open: true,
         hot: true,
-        historyApiFallback: true
+        historyApiFallback: true, // Permite recargar la página sin errores 404
     }
 };
