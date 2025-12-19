@@ -2,9 +2,9 @@
   "name": "fernandezhuidobrojavier-proyecto-minimarket",
   "version": "1.0.0",
   "scripts": {
-    "lanzarRAM": "webpack serve --mode development",
+    "start": "webpack serve --mode development --open",
     "build:prod": "webpack --mode production",
-    "start": "json-server --watch src/data/db.json --port 3000"
+    "lanzarRAM": "node --max-old-space-size=4096 node_modules/webpack/bin/webpack serve --mode development"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
