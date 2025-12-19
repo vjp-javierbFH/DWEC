@@ -4,13 +4,13 @@
             "id": 1,
             "nombre": "Energy Sistem Frame Speaker",
             "precio": 133,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/24/244346/1511-energy-sistem-frame-speaker-east-beach-50w.jpg"
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1084/10844922/1671-energy-sistem-hyperbeat-altavoz-bluetooth-con-luces-led-80w-negro.jpg"
         },
         {
             "id": 2,
             "nombre": "Gigabyte GeForce RTX 2070",
             "precio": 429,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/25/254425/119-gigabyte-geforce-rtx-2070-windforce-2x-8gb-gddr6.jpg"
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1084/10844922/1671-energy-sistem-hyperbeat-altavoz-bluetooth-con-luces-led-80w-negro.jpg"
         }
     ],
     "muebles": [
@@ -18,7 +18,7 @@
             "id": 3,
             "nombre": "Silla de oficina ergonómica",
             "precio": 89,
-            "imagen": "https://img.pccomponentes.com/articles/18/182544/silla.jpg"
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1001/10017574/1534-jshome-trend-silla-oficina-ergonomica.jpg"
         }
     ],
     "decoracion": [
@@ -26,7 +26,7 @@
             "id": 4,
             "nombre": "Lámpara de pie LED",
             "precio": 45,
-            "imagen": "https://img.pccomponentes.com/articles/20/203456/lampara.jpg"
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1094/10949017/1682-homcom-lampara-de-pie-led-regulable-42w-con-control-remoto-y-tactil-blanco.jpg"
         }
     ]
 }

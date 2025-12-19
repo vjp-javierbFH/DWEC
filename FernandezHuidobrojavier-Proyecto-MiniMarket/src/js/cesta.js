@@ -4,15 +4,19 @@ import { renderHeader } from './header';
 
 export class Carrito {
     static async agregar(producto) {
-        await DatabaseCarrito.add(producto);
-        await renderHeader();
-        alert("¡Añadido!");
+        try {
+            await DatabaseCarrito.add(producto);
+            await renderHeader();
+            alert(`${producto.nombre} se ha añadido al carrito`);
+        } catch (error) {
+            console.error("Error al añadir al carrito:", error);
+        }
     }
 
     static async eliminar(id_db) {
         await DatabaseCarrito.delete(id_db);
         await renderHeader();
-        pintarCesta();
+        await pintarCesta();
     }
 
     static async obtenerTotal() {
@@ -31,7 +35,7 @@ async function pintarCesta() {
     contenedor.innerHTML = "";
 
     if (productos.length === 0) {
-        contenedor.innerHTML = "<p>Tu cesta está vacía</p>";
+        contenedor.innerHTML = "<p style='text-align:center; padding:20px;'>La cesta está vacía.</p>";
         if (totalElemento) totalElemento.innerText = "0";
         return;
     }
@@ -40,8 +44,8 @@ async function pintarCesta() {
         const item = document.createElement('div');
         item.className = 'item-cesta';
         item.innerHTML = `
-            <div class="img-cesta-container" style="width:80px; height:80px;">
-                <img src="${p.imagen}" alt="${p.nombre}" class="img-cesta">
+            <div class="img-cesta-container">
+                <img src="${p.imagen}" alt="${p.nombre}" class="img-cesta" onerror="this.src='https://via.placeholder.com/100?text=Error'">
             </div>
             <div class="info-item">
                 <h3>${p.nombre}</h3>
@@ -50,6 +54,7 @@ async function pintarCesta() {
         `;
 
         const btnBorrar = document.createElement('button');
+        btnBorrar.className = 'btn-eliminar';
         btnBorrar.innerText = "Eliminar";
         btnBorrar.onclick = () => Carrito.eliminar(p.id_db);
 
@@ -61,5 +66,16 @@ async function pintarCesta() {
     if (totalElemento) totalElemento.innerText = total.toFixed(2);
 }
 
-// Inicializar si estamos en carrito.html
+// Botón vaciar carrito
+document.addEventListener('click', async (e) => {
+    if (e.target && e.target.id === 'btn-vaciar') {
+        const productos = await DatabaseCarrito.getAll();
+        for (let p of productos) {
+            await DatabaseCarrito.delete(p.id_db);
+        }
+        await pintarCesta();
+        await renderHeader();
+    }
+});
+
 pintarCesta();

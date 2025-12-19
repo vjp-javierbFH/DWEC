@@ -8,10 +8,10 @@ async function iniciar() {
     await renderHeader();
 
     try {
-        // Intentamos conectar al servidor de datos
-        const res = await fetch('http://localhost:3000/muebles');
+        // IMPORTANTE: Cambia 'electronica' por 'muebles' o 'decoracion' según el archivo
+        const res = await fetch('http://localhost:3000/electronica');
 
-        if (!res.ok) throw new Error("No se pudo conectar con el servidor de datos");
+        if (!res.ok) throw new Error("Servidor no disponible");
 
         const datos = await res.json();
         contenedor.innerHTML = "";
@@ -20,13 +20,10 @@ async function iniciar() {
             const card = document.createElement('div');
             card.className = 'card';
 
-            // Estructura mejorada con manejo de error en imagen
             card.innerHTML = `
                 <div class="card-image-container">
-                    <img src="${p.imagen}" 
-                         alt="${p.nombre}" 
-                         class="producto-foto"
-                         onerror="this.src='https://via.placeholder.com/200x200?text=Error+Imagen'">
+                    <img src="${p.imagen}" alt="${p.nombre}" class="producto-foto" 
+                         onerror="this.src='https://via.placeholder.com/200?text=Sin+Imagen'">
                 </div>
                 <div class="card-info">
                     <h3>${p.nombre}</h3>
@@ -44,11 +41,8 @@ async function iniciar() {
         });
     } catch (error) {
         console.error("Error:", error);
-        contenedor.innerHTML = `
-            <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
-                <p>⚠️ No se pudieron cargar los productos.</p>
-            </div>
-        `;
+        contenedor.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">⚠️ Error al conectar con la base de datos (Puerto 3000).</p>`;
     }
 }
+
 iniciar();

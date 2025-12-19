@@ -1,14 +1,17 @@
-/* --- VARIABLES Y RESET --- */
+/* --- VARIABLES GLOBALES --- */
 :root {
-    --primary: #212529;
-    --accent: #ffc107;
-    --success: #28a745;
-    --danger: #dc3545;
-    --bg: #f4f7f6;
-    --white: #ffffff;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --primary-color: #2c3e50;
+    --accent-color: #f39c12;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
 }
 
+/* --- RESET GENERAL --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,21 +19,21 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background-color: var(--bg);
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
-/* --- HEADER DINÁMICO --- */
+/* --- HEADER Y NAVEGACIÓN --- */
 header {
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav {
@@ -39,162 +42,135 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--white);
+    padding: 0 20px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav a {
-    color: #adb5bd;
+    color: #ecf0f1;
     text-decoration: none;
-    transition: 0.3s;
     font-weight: 500;
+    transition: color 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-    color: var(--accent);
+nav a:hover {
+    color: var(--accent-color);
 }
 
 #cart-count {
-    background: var(--accent);
-    color: var(--primary);
+    background: var(--accent-color);
+    color: var(--primary-color);
     padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.8rem;
+    border-radius: 50%;
+    font-size: 0.85rem;
     font-weight: bold;
+    margin-left: 5px;
 }
 
-/* --- SECCIÓN HERO --- */
+/* --- HERO SECTION --- */
 .hero {
-    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-    padding: 3rem 2rem;
     text-align: center;
-    margin-bottom: 2rem;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), var(--bg-color);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
 }
 
 /* --- GRID DE PRODUCTOS --- */
 .grid-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
-    padding: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
 }
 
-/* --- TARJETAS (CARDS) --- */
+/* --- TARJETAS DE PRODUCTO (CARDS) --- */
 .card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow);
+    padding: 15px;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Contenedor de Imagen Crítico */
+/* CONTENEDOR DE IMAGEN: El secreto para que se vean en Chrome */
 .card-image-container {
     width: 100%;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    background: #fff;
-}
-
-/* --- ESTILOS DE IMÁGENES (CRÍTICO) --- */
-.card-image-container,
-.img-cesta-container {
-    width: 100%;
-    height: 200px;
-    /* Altura fija para que el contenedor no sea invisible */
+    height: 220px;
+    /* Altura fija obligatoria */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-radius: 8px;
 }
 
-.producto-foto,
-.img-cesta {
+.producto-foto {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    /* Evita que la imagen se estire */
+    /* Ajusta la imagen sin deformar ni cortar */
     display: block !important;
-    /* Fuerza a que se muestre */
 }
 
-/* --- GRID DE PRODUCTOS --- */
-.grid-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-}
-
-.card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.card h3 {
-    font-size: 1rem;
-    margin: 10px 0;
-    height: 45px;
+.card-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    height: 50px;
+    /* Alinea los títulos */
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .precio {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    color: var(--success-color);
     font-weight: bold;
-    color: var(--success);
     margin-bottom: 15px;
 }
 
 .btn-comprar {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s;
     margin-top: auto;
 }
 
-/* --- CARRITO / CESTA --- */
+.btn-comprar:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* --- PÁGINA DEL CARRITO (carrito.html) --- */
 .lista-carrito {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -202,46 +178,79 @@ nav a.active {
 .item-cesta {
     display: flex;
     align-items: center;
-    background: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
 
-.item-cesta img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
+.img-cesta-container {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
     margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.img-cesta {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .info-item {
     flex-grow: 1;
 }
 
+.info-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.btn-eliminar {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-eliminar:hover {
+    opacity: 0.8;
+}
+
 .total-seccion {
-    text-align: center;
-    margin: 20px;
+    text-align: right;
+    max-width: 900px;
+    margin: 30px auto;
     padding: 20px;
     background: white;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
-.card-image-container {
-    width: 100%;
-    height: 200px; 
-    min-height: 200px; /* Fuerza el espacio visual */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 10px;
+#precio-total {
+    font-size: 2rem;
+    color: var(--success-color);
+    font-weight: bold;
 }
 
-.producto-foto {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 }
