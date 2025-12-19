@@ -2,31 +2,79 @@
     "electronica": [
         {
             "id": 1,
-            "nombre": "Energy Sistem Frame Speaker",
-            "precio": 133,
+            "nombre": "Energy Sistem Hyperbeat 80W",
+            "precio": 133.00,
             "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1084/10844922/1671-energy-sistem-hyperbeat-altavoz-bluetooth-con-luces-led-80w-negro.jpg"
         },
         {
             "id": 2,
-            "nombre": "Gigabyte GeForce RTX 2070",
-            "precio": 1667,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/24/246129/1.jpg"
+            "nombre": "Gigabyte GeForce RTX 4070 SUPER",
+            "precio": 669.00,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/27/277956/gigabyte-geforce-rtx-2080-super-gaming-oc-waterforce-wb-8gb-gddr6.jpg"
+        },
+        {
+            "id": 3,
+            "nombre": "Logitech G502 Hero Ratón Gaming",
+            "precio": 49.90,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/17/179806/244-logitech-g502-hero-raton-gaming-16000dpi-caracteristicas.jpg"
+        },
+        {
+            "id": 4,
+            "nombre": "Teclado Corsair K70 RGB MK.2",
+            "precio": 159.99,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1005/10057566/1817-corsair-k70-rgb-pro-teclado-mecanico-gaming-switch-cherry-mx-red-negro.jpg"
         }
     ],
     "muebles": [
         {
-            "id": 3,
-            "nombre": "Silla de oficina ergonómica",
-            "precio": 89,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1001/10017574/1534-jshome-trend-silla-oficina-ergonomica.jpg"
+            "id": 5,
+            "nombre": "Silla Gaming Newskill Kaidan",
+            "precio": 169.95,
+            "imagen": "https://img.pccomponentes.com/articles/1086/10860861/1506-newskill-nue-silla-gaming-ergonomica-malla-transpirable-con-soporte-lumbar-negro-foto.jpg"
+        },
+        {
+            "id": 6,
+            "nombre": "Mesa Gaming Drift DZ200",
+            "precio": 149.00,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1081/10812776/1644-drift-dz175-mesa-gaming-rgb-negra.jpg"
+        },
+        {
+            "id": 7,
+            "nombre": "Silla de Oficina Owlotech Premium",
+            "precio": 125.00,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/41/418593/1354-owlotech-silla-de-oficina-stanford-blanca.jpg"
+        },
+        {
+            "id": 8,
+            "nombre": "Estantería Moderna Forjasport",
+            "precio": 85.30,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1085/10853947/1369-briebe-bri-6005-mesa-de-ordenador-2-cajones-76x115x50cm-estanteria-prakt-roble.jpg"
         }
     ],
     "decoracion": [
         {
-            "id": 4,
-            "nombre": "Lámpara de pie moderna",
-            "precio": 45,
-            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1094/10949045/1833-homcom-lampara-de-pie-moderna-150-cm-con-pantalla-de-tela-luz-nocturna-blanco.jpg"
+            "id": 9,
+            "nombre": "Lámpara de Pie LED Inteligente",
+            "precio": 378.90,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1005/10058543/1564-lampara-de-pie-philips-hue-gradient-signe-led-bluetooth-regulable-2550-lm-blanco.jpg"
+        },
+        {
+            "id": 10,
+            "nombre": "Tira LED RGBIC Bluetooth Govee",
+            "precio": 29.99,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1096/10960752/1293-tira-de-luz-inteligente-govee-rgbic-bluetooth-interior-coche-transparente-4x30-cm.jpg"
+        },
+        {
+            "id": 11,
+            "nombre": "Reloj de Pared Industrial 60cm",
+            "precio": 38.00,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/28/282283/bresser-mytime-dcf-estacion-meteorologica-analogica-de-pared-rojo.jpg"
+        },
+        {
+            "id": 12,
+            "nombre": "Flamingueo Mini Frigorífico Nevera para Habitación con Espejo y Función Frío y Calor",
+            "precio": 42.15,
+            "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1085/10857850/1443-flamingueo-mini-frigorifico-nevera-para-habitacion-con-espejo-y-funcion-frio-y-calor-10l-12v.jpg"
         }
     ]
 }
